@@ -1,5 +1,35 @@
 <!doctype html>
-<meta charset="utf-8">
-<title>My Site</title>
-<h1>It works!</h1>
-<p>Deployed with GitHub Pages.</p>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Poem Shapes</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Shuffle.js (UMD) from a CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Shuffle/6.1.0/shuffle.min.js" defer></script>
+  <!-- Your app code -->
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="toolbar">
+    <h1>Poem Shapes</h1>
+    <div class="controls">
+      <input id="search" type="search" placeholder="Search title or author…" />
+      <select id="sort">
+        <option value="default">Sort: Default</option>
+        <option value="most-lines">Most lines</option>
+        <option value="fewest-lines">Fewest lines</option>
+        <option value="longest-line">Longest line</option>
+        <option value="title">Title A–Z</option>
+      </select>
+      <button id="reload">Reload poems</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="grid" class="grid" aria-live="polite"></div>
+  </main>
+
+  <noscript>This site needs JavaScript to draw the poem shapes.</noscript>
+</body>
+</html>
