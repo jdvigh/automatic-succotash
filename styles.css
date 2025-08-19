@@ -1,0 +1,98 @@
+:root {
+  --bg: #0e0f12;
+  --card: #151821;
+  --text: #e8ecf1;
+  --muted: #a9b3c1;
+  --accent: #7aa2ff;
+  --radius: 16px;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, #0b0c10, #0f1117 30%, #0e0f12);
+}
+
+header.toolbar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.25rem clamp(1rem, 4vw, 2rem);
+  border-bottom: 1px solid #222531;
+}
+header.toolbar h1 {
+  margin: 0;
+  font-size: clamp(1.1rem, 1.4rem, 1.6rem);
+  letter-spacing: 0.3px;
+}
+.controls {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+.controls input, .controls select, .controls button {
+  background: #0f1320;
+  color: var(--text);
+  border: 1px solid #282c3a;
+  padding: 0.55rem 0.7rem;
+  border-radius: 10px;
+}
+.controls input { width: min(42vw, 320px); }
+.controls button:hover { border-color: #3a4157; cursor: pointer; }
+
+.grid {
+  --min: 220px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--min), 1fr));
+  gap: 16px;
+  padding: 1.25rem clamp(1rem, 4vw, 2rem) 3rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid #1f2432;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+  overflow: clip;
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  border-color: #2b3246;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+}
+
+.shape {
+  padding: 14px 14px 0 14px;
+}
+.shape svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #0f1320;
+  border-radius: 12px;
+}
+
+.meta {
+  padding: 10px 14px 14px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.meta .title {
+  color: var(--text);
+  font-weight: 600;
+}
+.meta .author {
+  opacity: 0.95;
+}
+.meta .stats {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
